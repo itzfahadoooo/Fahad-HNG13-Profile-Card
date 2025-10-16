@@ -1,0 +1,384 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg-dark: #f0f2f5;
+  --color-bg-light: #e8eaed;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f5f7fa;
+  --color-text-primary: #1a1d2e;
+  --color-text-secondary: #232429ff;
+  --color-accent: #8892b0;
+  --color-accent-light: #9ca3af;
+  --color-silver: #c0c5d0;
+  --color-border: #b3d9ff;
+  --color-border-dark: #7eb3d4;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  /* background: linear-gradient(135deg, #e8eaed 0%, #f0f2f5 50%, #e8eaed 100%); */
+  background: var(--color-bg-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   Profile Card - Main Container
+   ============================================ */
+
+.profile-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtle gradient overlay on top */
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-silver), transparent);
+  opacity: 0.4;
+}
+
+.profile-card:hover {
+  border-color: var(--color-border-dark);
+  box-shadow: 0 30px 60px -12px rgba(126, 179, 212, 0.15);
+}
+
+.profile-card__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem;
+}
+
+/* ============================================
+   Avatar Section - Premium Styling
+   ============================================ */
+
+.profile-card__avatar-wrapper {
+  margin: 0;
+  position: relative;
+  width: fit-content;
+}
+
+.profile-card__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+  transition: var(--transition-smooth);
+  position: relative;
+  z-index: 1;
+  background: var(--color-surface-hover);
+  cursor: pointer;
+}
+
+.profile-card__avatar-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.profile-card:hover .profile-card__avatar-wrapper::after {
+  opacity: 1;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-color: var(--color-border-dark);
+}
+
+.profile-card:hover .profile-card__avatar {
+  transform: scale(1.02);
+  border-color: var(--color-border-dark);
+}
+
+/* ============================================
+   Header & Name - Elegant Typography
+   ============================================ */
+
+.profile-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-card__name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.profile-card__time {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   Bio Section
+   ============================================ */
+
+.profile-card__bio {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  margin: 0.5rem 0;
+  text-align: justify;
+}
+
+/* ============================================
+   Social Links - Icon-Based Design
+   ============================================ */
+
+.profile-card__social {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-card__social-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  border: 1.5px solid var(--color-border);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #7eb3d4, #5a9ac7);
+  opacity: 0;
+  transition: var(--transition-smooth);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.social-link:hover {
+  color: white;
+  border-color: var(--color-border-dark);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #7eb3d4, #5a9ac7);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--color-border-dark);
+  outline-offset: 2px;
+}
+
+.social-link:active {
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   Sections (Hobbies & Dislikes)
+   ============================================ */
+
+.profile-card__hobbies,
+.profile-card__dislikes {
+  display: grid;
+  gap: 1rem;
+}
+
+.profile-card__section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-accent-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-card__section-title::before {
+  content: '';
+  width: 3px;
+  height: 16px;
+  background: linear-gradient(180deg, #7eb3d4, #5a9ac7);
+  border-radius: 2px;
+}
+
+.profile-card__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.profile-card__list li {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  padding: 0.75rem 1rem;
+  background: var(--color-surface-hover);
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.profile-card__hobbies .profile-card__list li::before {
+  content: '\f02b';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #7eb3d4;
+  font-size: 0.85rem;
+}
+
+.profile-card__dislikes .profile-card__list li::before {
+  content: '\f05e';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+}
+
+.profile-card__list li:hover {
+  background: var(--color-surface);
+  border-color: var(--color-border-dark);
+  transform: translateX(4px);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (min-width: 600px) {
+  .profile-card__container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .profile-card__avatar-wrapper {
+    flex-shrink: 0;
+  }
+
+  .profile-card__avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .profile-card__list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+@media (min-width: 800px) {
+  .profile-card {
+    max-width: 700px;
+  }
+
+  .profile-card__container {
+    padding: 3rem;
+  }
+
+  .profile-card__avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 14px;
+  }
+
+  .profile-card__name {
+    font-size: 2rem;
+  }
+
+  .profile-card__social-list {
+    gap: 1.25rem;
+  }
+}
+
+/* ============================================
+   Accessibility & Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg-dark: #f5f7fa;
+    --color-bg-light: #eeeff5;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f8f9fc;
+    --color-text-primary: #1a1d2e;
+    --color-text-secondary: #5a5f73;
+    --color-accent: #6b7280;
+    --color-accent-light: #9ca3af;
+    --color-border: #e5e7eb;
+  }
+
+  .profile-card {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  }
+}
