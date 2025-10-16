@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateTime() {
     const currentTime = Date.now();
-    timeElement.textContent = Date.now();
+    timeElement.textContent = `🕒 Time (ms): ${currentTime}`;
   }
 
   updateTime();
