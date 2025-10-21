@@ -1,117 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fahad Idrees - Profile Card</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahad Idrees - Profile Card</title>
+  <script>
+    (function() {
+      const currentTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", currentTheme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Fahad Idrees</a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Profile Card Wrapper -->
+  <div class="profile-card-wrapper">
     <!-- Main profile card container -->
     <article class="profile-card" data-testid="test-profile-card">
-      <div class="profile-card__container">
-        <!-- Avatar section -->
-        <figure class="profile-card__avatar-wrapper">
-          <img
-            class="profile-card__avatar"
-            src="./Avatar.jpg"
-            alt="Profile avatar"
-            data-testid="test-user-avatar"
-          />
-        </figure>
+    <div class="profile-card__container">
+      <!-- Avatar section -->
+      <figure class="profile-card__avatar-wrapper">
+        <img 
+          class="profile-card__avatar" 
+          src="./assets/Avatar.jpg" 
+          alt="Profile avatar"
+          data-testid="test-user-avatar"
+        >
+      </figure>
 
-        <!-- Main content section -->
-        <div class="profile-card__content">
-          <header class="profile-card__header">
-            <h2 class="profile-card__name" data-testid="test-user-name">
-              Fahad Idrees
-            </h2>
-            <p class="profile-card__time" data-testid="test-user-time">
-              Loading...
-            </p>
-          </header>
-
-          <!-- Bio section -->
-          <p class="profile-card__bio" data-testid="test-user-bio">
-            Jobless frustrated frontend developer by day😣💆‍♂️, TypeScript shinobi
-            by night🐱‍👤. Trained in the sacred arts of React and Next.js for
-            one year under the guidance of the “Framework Hokage”🙏📿. Fueled by
-            coffee, code, and the occasional dramatic monologue about clean
-            architecture🙄. Open-source contributor on a quest to build elegant
-            solutions and achieve greater developer enlightenment!😤. I AM
-            IRONMAN!!!🤞💥....(allegedly)
+      <!-- Main content section -->
+      <div class="profile-card__content">
+        <header class="profile-card__header">
+          <h2 class="profile-card__name" data-testid="test-user-name">
+            Fahad Idrees
+          </h2>
+          <p class="profile-card__time" data-testid="test-user-time">
+            Loading...
           </p>
+        </header>
 
-          <!-- Social links section -->
-          <nav class="profile-card__social">
-            <ul
-              class="profile-card__social-list"
-              data-testid="test-user-social-links"
-            >
-              <li>
-                <a
-                  href="https://x.com/fahad_idrees22"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="test-user-social-twitter"
-                  title="Twitter"
-                  aria-label="Twitter"
-                >
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/itzfahadoooo"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="test-user-social-github"
-                  title="GitHub"
-                  aria-label="GitHub"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/fahad-idrees-31753832b/?lipi=urn%3Ali%3Apage%3Aprofile_common_profile_index%3B6589c917-f41a-4416-8cdf-b0cb5e8f140b"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="test-user-social-linkedin"
-                  title="LinkedIn"
-                  aria-label="LinkedIn"
-                >
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
+        <!-- Bio section -->
+        <p class="profile-card__bio" data-testid="test-user-bio">
+          Jobless frustrated frontend developer by day😣💆‍♂️, TypeScript shinobi
+          by night🐱‍👤. Trained in the sacred arts of React and Next.js for
+          one year under the guidance of the "Framework Hokage"🙏📿. Fueled by
+          coffee, code, and the occasional dramatic monologue about clean
+          architecture🙄. Open-source contributor on a quest to build elegant
+          solutions and achieve greater developer enlightenment!😤. I AM
+          IRONMAN!!!🤞💥....(allegedly)
+        </p>
 
-          <!-- Hobbies section -->
-          <section class="profile-card__hobbies">
-            <h3 class="profile-card__section-title">Hobbies</h3>
-            <ul class="profile-card__list" data-testid="test-user-hobbies">
-              <li>Gaming</li>
-              <li>Anime-ing</li>
-              <li>Manga-ing</li>
-            </ul>
-          </section>
+        <!-- Social links section -->
+        <nav class="profile-card__social">
+          <ul class="profile-card__social-list" data-testid="test-user-social-links">
+            <li>
+              <a 
+                href="https://x.com/fahad_idrees22" 
+                class="social-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                data-testid="test-user-social-twitter"
+                title="Twitter"
+                aria-label="Twitter"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://github.com/itzfahadoooo" 
+                class="social-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                data-testid="test-user-social-github"
+                title="GitHub"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://www.linkedin.com/in/fahad-idrees-31753832b/" 
+                class="social-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                data-testid="test-user-social-linkedin"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-          <!-- Dislikes section -->
-          <section class="profile-card__dislikes">
-            <h3 class="profile-card__section-title">Dislikes</h3>
-            <ul class="profile-card__list" data-testid="test-user-dislikes">
-              <li>Bug Fixing</li>
-              <li>Falling in Love</li>
-            </ul>
-          </section>
-        </div>
+        <!-- Hobbies section -->
+        <section class="profile-card__hobbies">
+          <h3 class="profile-card__section-title">Hobbies</h3>
+          <ul class="profile-card__list" data-testid="test-user-hobbies">
+            <li>Gaming</li>
+            <li>Anime-ing</li>
+            <li>Manga-ing</li>
+          </ul>
+        </section>
+
+        <!-- Dislikes section -->
+        <section class="profile-card__dislikes">
+          <h3 class="profile-card__section-title">Dislikes</h3>
+          <ul class="profile-card__list" data-testid="test-user-dislikes">
+            <li>Bug Fixing</li>
+            <li>Falling in Love</li>
+          </ul>
+        </section>
       </div>
-    </article>
+    </div>
+  </article>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
