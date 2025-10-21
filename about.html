@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Fahad Idrees</title>
+  <script>
+    (function() {
+      const currentTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", currentTheme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Fahad Idrees</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Profile</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main About Page -->
+  <main class="about-page" data-testid="test-about-page">
+    <div class="page-container">
+      <header class="page-header">
+        <h1>About Me</h1>
+        <p class="page-subtitle">A glimpse into my journey as a developer and person</p>
+      </header>
+
+      <!-- Who Am I Section -->
+      <section class="about-section" data-testid="test-about-bio">
+        <h2 class="section-title">Who Am I</h2>
+        <p class="section-content">
+          I'm Fahad Idrees, a passionate frontend developer on a journey of continuous learning and growth. 
+          Currently navigating the exciting (and sometimes frustrating 😅) world of TypeScript, React, and Next.js. 
+          I believe in writing clean, semantic code and creating accessible, user-friendly experiences. 
+          When I'm not debugging code or wrestling with CSS, you'll find me gaming, reading manga, or contemplating the 
+          nature of clean architecture over a cup of coffee. I'm driven by a desire to contribute meaningful solutions 
+          to the open-source community and build projects that make an impact.
+        </p>
+      </section>
+
+      <!-- Goals Section -->
+      <section class="about-section" data-testid="test-about-goals">
+        <h2 class="section-title">Goals in This Program</h2>
+        <ul class="goals-list">
+          <li>Master responsive design and accessibility standards (WCAG compliance)</li>
+          <li>Deepen expertise in modern frontend frameworks and tooling</li>
+          <li>Build real-world projects that showcase practical skills</li>
+          <li>Collaborate effectively with other developers and learn from diverse perspectives</li>
+          <li>Contribute meaningfully to open-source projects</li>
+          <li>Develop a strong portfolio that demonstrates professionalism and growth</li>
+          <li>Transition from frustration to confidence in debugging complex code</li>
+        </ul>
+      </section>
+
+      <!-- Low Confidence Section -->
+      <section class="about-section" data-testid="test-about-confidence">
+        <h2 class="section-title">Areas of Low Confidence</h2>
+        <p class="section-content">
+          I'm honest about my struggles: deep JavaScript logic and asynchronous patterns still challenge me sometimes. 
+          Advanced CSS animations and complex layout systems can feel overwhelming. State management in large-scale apps 
+          is an area where I'm still building intuition. Debugging production issues under pressure brings up the impostor 
+          syndrome! But here's the thing—I embrace these challenges as learning opportunities. Every bug I fix, every 
+          animation I nail, and every complex problem I solve makes me stronger. I'm committed to turning these low-confidence 
+          areas into strengths through dedicated practice and seeking mentorship.
+        </p>
+      </section>
+
+      <!-- Future Self Note Section -->
+      <section class="about-section" data-testid="test-about-future-note">
+        <h2 class="section-title">Note to Future Self</h2>
+        <div class="note-box">
+          <p class="section-content">
+            Dear Future Fahad,<br><br>
+            Remember this moment—you're at the beginning of something big. The code that seems impossible today 
+            will feel trivial in six months. Keep shipping projects, even when they feel imperfect. The only way out 
+            is through. Don't compare your chapter 1 to someone else's chapter 20. You've got unique perspectives and 
+            ideas worth sharing. Take breaks, rest well, and remember that burnout is real but preventable. 
+            Your curiosity and determination are your superpowers—never lose those. Build fearlessly. 💪
+          </p>
+        </div>
+      </section>
+
+      <!-- Extra Thoughts Section -->
+      <section class="about-section" data-testid="test-about-extra">
+        <h2 class="section-title">Extra Thoughts</h2>
+        <blockquote class="thought-quote">
+          <p>
+            "The best time to plant a tree was 20 years ago. The second best time is now." 
+            — Chinese Proverb
+          </p>
+          <p>
+            For me, this means: the best time to start building great software was yesterday, but today is 
+            a solid second place. Every line of code is a step forward, every mistake is a lesson learned, 
+            and every shipped project is proof of progress. Let's build something amazing! 🚀
+          </p>
+        </blockquote>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
