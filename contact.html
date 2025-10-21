@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Fahad Idrees</title>
+  <script>
+    (function() {
+      const currentTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", currentTheme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Fahad Idrees</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Contact Page -->
+  <main class="contact-page" data-testid="test-contact-page">
+    <div class="page-container">
+      <header class="page-header">
+        <h1>Get In Touch</h1>
+        <p class="page-subtitle">Have a question or want to collaborate? I'd love to hear from you!</p>
+      </header>
+
+      <section class="contact-section">
+        <form id="contactForm" class="contact-form" novalidate>
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label for="contactName" class="form-label">Full Name <span aria-label="required">*</span></label>
+            <input
+              id="contactName"
+              name="name"
+              type="text"
+              class="form-input"
+              data-testid="test-contact-name"
+              required
+              aria-describedby="error-name"
+              placeholder="Your name"
+            >
+            <p id="error-name" class="error-message" data-testid="test-contact-error-name" role="alert"></p>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">Email Address <span aria-label="required">*</span></label>
+            <input
+              id="contactEmail"
+              name="email"
+              type="email"
+              class="form-input"
+              data-testid="test-contact-email"
+              required
+              aria-describedby="error-email"
+              placeholder="your.email@example.com"
+            >
+            <p id="error-email" class="error-message" data-testid="test-contact-error-email" role="alert"></p>
+          </div>
+
+          <!-- Subject Field -->
+          <div class="form-group">
+            <label for="contactSubject" class="form-label">Subject <span aria-label="required">*</span></label>
+            <input
+              id="contactSubject"
+              name="subject"
+              type="text"
+              class="form-input"
+              data-testid="test-contact-subject"
+              required
+              aria-describedby="error-subject"
+              placeholder="What is this about?"
+            >
+            <p id="error-subject" class="error-message" data-testid="test-contact-error-subject" role="alert"></p>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="contactMessage" class="form-label">Message <span aria-label="required">*</span></label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="6"
+              class="form-textarea"
+              data-testid="test-contact-message"
+              required
+              minlength="10"
+              aria-describedby="error-message"
+              placeholder="Your message here (minimum 10 characters)..."
+            ></textarea>
+            <p id="error-message" class="error-message" data-testid="test-contact-error-message" role="alert"></p>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit" data-testid="test-contact-submit">
+            Send Message
+          </button>
+        </form>
+
+        <!-- Success Message -->
+        <p class="success-message" data-testid="test-contact-success" role="status" hidden>
+          ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
